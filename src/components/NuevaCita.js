@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import uuid from 'uuid';
 const stateInicial = { 
-    cita: {
-        id: uuid(),
+    cita: {        
         mascota: '',
         propietario: '',
         fecha: '',
@@ -23,6 +22,7 @@ class NuevaCita extends Component {
             cita: {
                 ...this.state.cita,
                 [e.target.name]: e.target.value,
+                id: uuid()
                
             }
         });
