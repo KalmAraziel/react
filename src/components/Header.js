@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/heading-has-content */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Header = ({titulo}) => (    
     <header>       
@@ -7,6 +8,8 @@ const Header = ({titulo}) => (
     </header>
 );
    
-
+Header.propTypes = {
+    crearNuevaCita : PropTypes.func.isRequired
+}
 
 export default Header;

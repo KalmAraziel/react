@@ -1,11 +1,14 @@
 import React from 'react';
 import Cita from './Cita';
-
-const ListaCitas = ({citas, eliminarCita}) => (
+import PropTypes from 'prop-types';
+const ListaCitas = ({citas, eliminarCita}) =>{ 
+    // imprimir mensaje
+    const mensaje = Object.keys(citas).length === 0 ? 'No hay Citas.' : 'Administrar las citas.'
+    return (
     
         <div className="card mt-2 py-5">
             <div className="card-body">
-                <h2 className="card-title text-center"> Administra las citas</h2>
+                <h2 className="card-title text-center"> { mensaje }</h2>
                 <div className="lista-citas">
                     { citas.map( cita => {
                         return (
@@ -20,6 +23,12 @@ const ListaCitas = ({citas, eliminarCita}) => (
             </div>
         </div>
     
-);
+    );
+};
+
+ListaCitas.propTypes = {
+    citas : PropTypes.array.isRequired,
+    eliminarCita: PropTypes.func.isRequired
+}
 
 export default ListaCitas;
