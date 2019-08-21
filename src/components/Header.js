@@ -9,7 +9,7 @@ const Header = ({titulo}) => (
 );
    
 Header.propTypes = {
-    crearNuevaCita : PropTypes.func.isRequired
+    crearNuevaCita : PropTypes.string.isRequired
 }
 
 export default Header;
